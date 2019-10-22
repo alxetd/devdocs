@@ -4,6 +4,8 @@ footer: MIT Licensed
 ---
 # Vuepress
 
+## Official Resources
+- [vuepress.vuejs.org](https://vuepress.vuejs.org)
+
 ## Resources
-- https://vuepress.vuejs.org/
-- https://vuepressbook.com/
+- [vuepressbook.com](https://vuepressbook.com)
