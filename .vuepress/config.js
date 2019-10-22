@@ -13,11 +13,6 @@ module.exports = {
       { text: 'Html', link: '/html/' },
       { text: 'Design Patterns', link: '/design-patterns/' },
       { text: 'Interview questions', link: '/interview-questions/' }
-    ],
-    sidebar: [
-      '/',
-      '/page-a',
-      ['/page-b', 'Explicit link text']
     ]
   }
 }
