@@ -19,6 +19,7 @@ module.exports = {
         text: 'Frontend',
         ariaLabel: 'Frontend',
         items: [
+          { text: 'Angular', link: '/angular/' },
           { text: 'VueJs', link: '/vuejs/' },
           { text: 'React', link: '/react/' },
           { text: 'Javascript', link: '/javascript/' },
@@ -40,6 +41,9 @@ module.exports = {
       { text: 'Interview questions', link: '/interview-questions/' }
     ],
     sidebar: {
+      '/angular/': [
+        ''
+      ],
       '/css/': [
         ''
       ],
