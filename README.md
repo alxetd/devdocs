@@ -1,9 +1,3 @@
----
-home: true
-title: Blogging Like a Hacker
-lang: en-US
-footer: MIT Licensed
----
 ## Table of contents
 - Frontend
 - Backend
@@ -16,3 +10,6 @@ footer: MIT Licensed
 - About
 - Resources
 - Common problems/errors with found solutions
+
+## Resources
+- [smashingmagazine.com](https://www.smashingmagazine.com)
