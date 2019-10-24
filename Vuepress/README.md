@@ -1,9 +1,3 @@
----
-home: true
-sidebar: auto
-sidebarDepth: 2
-footer: MIT Licensed
----
 # Vuepress
 
 ## Official Resources

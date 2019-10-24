@@ -40,18 +40,44 @@ module.exports = {
       { text: 'Interview questions', link: '/interview-questions/' }
     ],
     sidebar: {
-        '/css/': [
-          ''
-        ],
-        '/vuejs/': [
-          '',
-          'one'
-        ],
-        // fallback
-        '/': [
-          '',
-          '/php/'
-        ]
+      '/css/': [
+        ''
+      ],
+      '/design-patterns/': [
+        ''
+      ],
+      '/drupal/': [
+        ''
+      ],
+      '/html/': [
+        ''
+      ],
+      '/interview-questions/': [
+        ''
+      ],
+      '/javascript/': [
+        '',
+      ],
+      '/laravel/': [
+        ''
+      ],
+      '/php/': [
+        ''
+      ],
+      '/react/': [
+        ''
+      ],
+      '/vuejs/': [
+        '',
+      ],
+      '/vuepress/': [
+        ''
+      ],
+      // fallback
+      '/': [
+        '',
+        '/php/'
+      ]
     }
   }
 }
