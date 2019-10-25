@@ -33,6 +33,7 @@ module.exports = {
         ariaLabel: 'Backend',
         items: [
           { text: 'Php', link: '/php/' },
+          { text: 'MySql', link: '/mysql/'},
           { text: 'Laravel', link: '/laravel/' },
           { text: 'Drupal', link: '/drupal/' },
         ]
@@ -63,6 +64,9 @@ module.exports = {
         '',
       ],
       '/laravel/': [
+        ''
+      ],
+      '/mysql/': [
         ''
       ],
       '/php/': [
