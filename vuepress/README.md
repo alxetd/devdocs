@@ -5,3 +5,12 @@
 
 ## Resources
 - [vuepressbook.com](https://vuepressbook.com)
+
+## Commands
+```bash
+vuepress dev
+```
+
+```bash
+vuepress build
+```
