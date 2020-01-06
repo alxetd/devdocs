@@ -1,3 +1,12 @@
+## Project setup
+```bash
+vuepress dev
+```
+
+```bash
+vuepress build
+```
+
 ## Table of contents
 - Frontend
 - Backend

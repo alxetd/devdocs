@@ -140,3 +140,8 @@ docker rm $(docker ps -q -f 'status=exited')
 docker rmi $(docker images -q -f "dangling=true")
 docker volume rm $(docker volume ls -qf dangling=true)
 ```
+
+## Official Repositories
+- nginx	https://hub.docker.com/_/nginx/	
+- httpd	https://hub.docker.com/_/httpd/	
+- busybox	https://hub.docker.com/_/busybox/	
