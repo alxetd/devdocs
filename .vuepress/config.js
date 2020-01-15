@@ -2,7 +2,9 @@ module.exports = {
   title: 'My Documentation',
   description: 'Document information for site',
   markdown: {
-    extractHeaders: [ 'h2', 'h3', 'h4' ]
+    extractHeaders: [ 'h2', 'h3', 'h4' ],
+    lineNumbers: true,
+    toc: { includeLevel: [1, 2] },
   },
   themeConfig: {
     activeHeaderLinks: true,
@@ -40,7 +42,7 @@ module.exports = {
         ]
       },
       { text: 'Design Patterns', link: '/design-patterns/' },
-      { text: 'Interview questions', link: '/interview-questions/' }
+      { text: 'Interview', link: '/interview/' }
     ],
     sidebar: {
       '/angular/': [
@@ -61,8 +63,15 @@ module.exports = {
       '/html/': [
         ''
       ],
-      '/interview-questions/': [
-        ''
+      '/interview/': [
+        '',
+        'api',
+        'css',
+        'design-patterns',
+        'html',
+        'mysql',
+        'oop',
+        'php',
       ],
       '/javascript/': [
         '',
