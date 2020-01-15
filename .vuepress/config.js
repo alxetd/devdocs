@@ -2,7 +2,9 @@ module.exports = {
   title: 'My Documentation',
   description: 'Document information for site',
   markdown: {
-    extractHeaders: [ 'h2', 'h3', 'h4' ]
+    extractHeaders: [ 'h2', 'h3', 'h4' ],
+    lineNumbers: true,
+    toc: { includeLevel: [1, 2] },
   },
   themeConfig: {
     activeHeaderLinks: true,
@@ -19,6 +21,7 @@ module.exports = {
         text: 'Frontend',
         ariaLabel: 'Frontend',
         items: [
+          { text: 'Angular', link: '/angular/' },
           { text: 'VueJs', link: '/vuejs/' },
           { text: 'React', link: '/react/' },
           { text: 'Javascript', link: '/javascript/' },
@@ -32,18 +35,26 @@ module.exports = {
         ariaLabel: 'Backend',
         items: [
           { text: 'Php', link: '/php/' },
+          { text: 'MySql', link: '/mysql/'},
           { text: 'Laravel', link: '/laravel/' },
           { text: 'Drupal', link: '/drupal/' },
+          { text: 'Docker', link: '/docker/' },
         ]
       },
       { text: 'Design Patterns', link: '/design-patterns/' },
-      { text: 'Interview questions', link: '/interview-questions/' }
+      { text: 'Interview', link: '/interview/' }
     ],
     sidebar: {
+      '/angular/': [
+        ''
+      ],
       '/css/': [
         ''
       ],
       '/design-patterns/': [
+        ''
+      ],
+      '/docker/': [
         ''
       ],
       '/drupal/': [
@@ -52,13 +63,24 @@ module.exports = {
       '/html/': [
         ''
       ],
-      '/interview-questions/': [
-        ''
+      '/interview/': [
+        '',
+        'api',
+        'architecture',
+        'css',
+        'design-patterns',
+        'html',
+        'mysql',
+        'oop',
+        'php',
       ],
       '/javascript/': [
         '',
       ],
       '/laravel/': [
+        ''
+      ],
+      '/mysql/': [
         ''
       ],
       '/php/': [
