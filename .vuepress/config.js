@@ -66,6 +66,7 @@ module.exports = {
       '/interview/': [
         '',
         'api',
+        'architecture',
         'css',
         'design-patterns',
         'html',
