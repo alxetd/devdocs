@@ -1,14 +1,16 @@
 # Design Patterns
-- Singleton
-- Strategy
-- Observer
-- Factory
-- Command
+[[toc]]
+## Singleton
+## Strategy
+## Observer
+## Factory
+## Command
+## Repository
 
 # Architectural design patterns
 - Domain view pattern
 
-## Questions
+# Questions
 
-## Sources
+# Sources
 - https://www.youtube.com/watch?v=wiQdrH2YpT4&list=PLF206E906175C7E07

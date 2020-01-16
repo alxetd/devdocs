@@ -7,17 +7,18 @@ pageClass: interview
  [[toc]]
  
 ## Interview topics
-- OOP
-- Php
+- API
 - Design patterns
+- HTML
 - MySql
 - MySql query optimization
+- OOP
+- Php
+- SEO
+- Security
 - Vanilla JavaScript
 - VueJS
-- SEO
-- API
 - Website optimizations
-- HTML
 
 ## Online questions
 
