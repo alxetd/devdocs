@@ -1,4 +1,13 @@
 # Php
+## Filters
+::: tip Read More
+- [www.w3schools.com/php/php_filter.asp](https://www.w3schools.com/php/php_filter.asp)
+:::
+
+Validating data = Determine if the data is in proper form.
+
+Sanitizing data = Remove any illegal character from the data.
+
 ```bash
 Php	php-config	php	
 Php	php-config --extension-dir	php	

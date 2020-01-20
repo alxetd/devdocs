@@ -102,6 +102,7 @@ module.exports = {
         'general',
         'html',
         'jokes',
+        'management',
         'mysql',
         'oop',
         'php',

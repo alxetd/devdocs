@@ -2,7 +2,65 @@
 pageClass: php
 ---
 # Php
-##IP address
+## Code
+### Determine the value of $pear after executing the code below. What will strlen($pear) return? Explain your answer.
+```php
+$pear = ‘PEAR ’;
+$pear[12] = ‘PHP Extension and Application Repository’;
+```
+#### Answer
+This question reveals a few interesting things about the way PHP interprets code. The value of $pear in the code above will be the string “PEAR P” or the string “PEAR ” followed by seven spaces, followed by “P,” which is the first character in the string “PHP Extension and Application Repository.” The value returned by strlen($pear) will thus be 13. Since an element of a string can only consist of one character, and the count of elements within a string starts with 0, $pear[12] sets the 13th character of the string to the letter “P.” Interestingly enough, we chose to set the 13th value of a string that only has five characters. While other language interpreters might have thrown an out-of-bounds index error, PHP is more forgiving and fills in the blanks with empty spaces.
+
+### Determine the output of the code below. Explain your answer.
+```php
+var_dump(42 == 042);
+var_dump(‘042’ == 42);
+var_dump(‘042’ === 42);
+```
+#### Answer
+This question quizzes the coder on how the PHP interpreter handles numbers and strings.
+i. var_dump(42 == 042); will output bool(false) because the PHP interpreter treats leading zeroes as octals. 042 is 32 in decimal, which does not equal 42.
+ii. var_dump(‘042’ == 42); will output bool(true) because PHP interpreter will coerce the string into an integer but ignore the leading zero. 42 is equal to 42.
+iii. var_dump(‘042’ === 42); will output bool(false) because the === operator performs a stricter comparison and will not coerce the integer into a string.
+
+### Explain why the two code snippets below will evaluate to the same output.
+```php
+$x = true or false;
+var_dump($x);
+
+$x = true and false;
+var_dump($x);
+```
+#### Answer
+This question is designed to test a coder’s knowledge of the order of operations. The first block of code is more straightforward, evaluating to true because of the “or” operator. The second code block, however, would typically be expected to evaluate to false. Instead, it evaluates to true because of how the PHP interpreter handles the order of operations: “=” is prioritized leading to the following equivalent code snippet:
+
+$x = true; // sets $x equal to true
+True and false; // evaluates to false, but does not affect anything
+
+### If $x = 100 + “25%” + “$40” what is the value of $x and why?
+#### Answer
+The answer is $x = 125, because PHP uses automatic type conversion in deciding how to treat variables and values depending on how they are used. When PHP encounters a string during an arithmetic operation, it will interpret any numerical value and ignore the remainder in order from left to right. Strings that don’t start with numbers are evaluated to zero.
+
+$x = 100 + 25 + 0 = 125.
+
+### Predict the output of the code below. Explain your answer.
+```php
+$x = 2
+$y = 4
+$z = 6
+
+
+if($z > $y > $x) {
+    echo “true”;
+}else{
+    echo “false”;
+}
+```
+#### Answer
+At first glance, one would expect the boolean to evaluate to “true” because 6 > 4 > 2. However, the correct answer is “false” because PHP will first evaluate $z > $y, which returns a boolean value of 1 or true. It is this boolean value of 1 that is compared to the next integer in the chain, bool(1) > $z, which will result in NULL and echo “false.”
+
+
+## IP address
 How do you proceed if you need to get a user’s IP address?”
 ### Answer
 This question shows the level of creativity of the developer, as there are many possibilities to find an IP address.  For example, we can use the script : $_SERVER[“REMOTE_ADDR”];
@@ -180,3 +238,43 @@ This results in a single string.
 How to connect a MySQL database using PHP?
 ### Answer
 MySQL is the most popular database system used with PHP. The answer to this interview question is to use mysql_connection function.
+
+## Sessions
+::: tip Read More
+- [www.w3schools.com/php/php_sessions.asp](https://www.w3schools.com/php/php_sessions.asp)
+:::
+What are PHP sessions and how do they work?
+### Answer
+::: warning TIP
+What you’re really asking is whether they know how to use session_start(). It either creates or resumes a session based on an identifier that is sent to the server via a GET or POST request or a cookie. The most common use case scenario on the web is when a website won’t let you comment or post without first prompting a login. How does it know whether you’re logged in? One way would be to place a cookie in the user’s browser; on every request the cookie is sent server-side, where PHP can be used to determine which information is sent back and displayed to the client. While session_start() saves session data in files by default, it is also possible to store sessions directly in the database.
+:::
+When you work with an application, you open it, do some changes, and then you close it. This is much like a Session. The computer knows who you are. It knows when you start the application and when you end. But on the internet there is one problem: the web server does not know who you are or what you do, because the HTTP address doesn't maintain state.
+
+Session variables solve this problem by storing user information to be used across multiple pages (e.g. username, favorite color, etc). By default, session variables last until the user closes the browser.
+
+So; Session variables hold information about one single user, and are available to all pages in one application.
+::: tip
+If you need a permanent storage, you may want to store the data in a database.
+:::
+
+### Useful functions for session control?
+### Answer
+```php
+// Start the session
+session_start();
+// remove all session variables
+session_unset();
+// destroy the session
+session_destroy();
+// Set session variables
+$_SESSION["favcolor"] = "green";
+```
+
+### How are classes loaded in PHP?
+::: tip Read More
+- [www.php.net/manual/en/language.oop5.autoload.php](https://www.php.net/manual/en/language.oop5.autoload.php)
+:::
+This is a good way to gauge a developer’s understanding of autoloading. Whenever a class is instantiated, a function is triggered. You can register a function with the spl_autoload que detailed below.
+```php
+bool spl_autoload_register ([ callable $autoload_function [, bool$throw = true [, bool $prepend = false ]]] )
+```
