@@ -31,3 +31,13 @@ Although the answer to this is debatable, the widely accepted practice would be 
 It would also be acceptable to return a 422 Unprocessable Entity.
 
 Some may argue that a 400 Bad Request is acceptable, but we discourage this, since conventionally it implies the server did not understand the request, which in this case is not true.
+
+## HTTP and web services
+What are the different types of HTTP methods that are used in RESTful APIs? Explain when each is used and the differences between them.
+### Answer
+While this question is technical in nature, the use of RESTful APIs is independent of platform and very common in web development. Regardless of what programming languages or server side logic is being employed, the REST guidelines are the same. As such, even a relatively new fullstack developer should be well familiar with them.
+
+## LAMP
+Do you have any experience with LAMP?
+### Answer
+LAMP is an open-source solution stack that contains everything you need to create a complete, stand-alone platform for your web application—Linux, Apache, MySQL, and PHP. This question is a good opportunity for your prospective programmer to detail any experience they have taking a web project from conception to completion.
