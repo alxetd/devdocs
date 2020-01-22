@@ -2,7 +2,13 @@
 ## Concepts
 - ssh
 
-## Commands
+## ssh
+```bash
+eval $(ssh-agent -s) # Enable ssh-agent
+ssh-add ~/.ssh/eduard.trandafir@mrm-mccann.com
+```
+
+## Others
 ```bash
 ls		
 ls -1		
