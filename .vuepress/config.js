@@ -64,11 +64,14 @@ module.exports = {
         text: 'Backend',
         ariaLabel: 'Backend',
         items: [
-          { text: 'Php', link: '/php/' },
-          { text: 'MySql', link: '/mysql/'},
-          { text: 'Laravel', link: '/laravel/' },
-          { text: 'Drupal', link: '/drupal/' },
+          { text: 'Apache', link: '/apache/' },
           { text: 'Docker', link: '/docker/' },
+          { text: 'Drupal', link: '/drupal/' },
+          { text: 'Laravel', link: '/laravel/' },
+          { text: 'Linux', link: '/linux/' },
+          { text: 'MySql', link: '/mysql/'},
+          { text: 'Nginx', link: '/nginx/' },
+          { text: 'Php', link: '/php/' },
         ]
       },
       { text: 'Design Patterns', link: '/design-patterns/' },
@@ -76,6 +79,9 @@ module.exports = {
     ],
     sidebar: {
       '/angular/': [
+        ''
+      ],
+      '/apache/': [
         ''
       ],
       '/css/': [
@@ -114,6 +120,9 @@ module.exports = {
         '',
       ],
       '/laravel/': [
+        ''
+      ],
+      '/linux/': [
         ''
       ],
       '/mysql/': [

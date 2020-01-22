@@ -21,6 +21,9 @@ git reset --hard origin/master
 ```
 
 ```bash
+git checkout @{-1}
+git checkout - #	Checkout to previous branch	git;linux
+git commit -m TEXT --no-verify
 git clone --branch <tag_name> <repo_url>	
 git clone --depth DEPTH --single-branch --branch BRANCH REPO_URL	
 git branch -d BRANCH	The -d option is an alias for --delete, which only deletes the branch if it has already been fully merged in its upstream branch. 
@@ -69,7 +72,7 @@ git drop stash@{1}	You can remove stashes individually
 git stash pop	
 git show <commit>	show the commit itself
 git bisect start	
-git bisect good <commit>	
+git bisect good <commit>
 git bisect bad	
 git bisect reset	
 git add --patch [file] 	// Better yet, review changes and stage your hunks.
@@ -77,7 +80,7 @@ git diff --cached 	// Shows what is about to be committed. Review it carefully!
 git log --oneline --reverse --first-parent <insert last tag version here>.. | cut -c 9-	
 git push origin HEAD	
 git push origin HEAD -f	Push local changes to origin
-git reflog	
+git reflog
 git blame
 ```
 
