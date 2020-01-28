@@ -5,6 +5,126 @@ pageClass: php
 [[toc]]
 
 ## Code
+### Write a sample of code showing the nested ternary conditional operator in PHP.
+::: warning Answer
+```php
+$number_class = $number == 0 ? 'blue' : ($number > 0 ? 'green' : 'red');
+```
+
+Here we are assigning different strings to the number_class variable based on a numeric value ($number).
+:::
+
+### What does the follow code echo?
+```php
+$a = "PHP";
+$a = $a + 1;
+echo $a;
+```
+::: warning Answer
+The number `1`.
+
+Note, in PHP 7.2 this throws a warning that a non-numeric value is encountered on the line and does not do the conversion to the `int`, so it echoes `PHP` instead.
+:::
+
+### Consider the following code:
+```php
+$x = NULL;
+
+if ('0xFF' == 255) {
+    $x = (int)'0xFF';
+}
+```
+What will be the value of `$x` after this code executes? Explain your answer.
+::: warning Answer
+Perhaps surprisingly, the answer is neither NULL nor 255. Rather, the answer is that `$x` will equal 0 (zero).
+
+Why?
+
+First, let’s consider whether `'0xFF' == 255` will evaluate to true or false. When a hex string is loosely compared to an integer, it is converted to an integer. Internally, PHP uses is_numeric_string to detect that the string contains a hex value and converts it to an integer (since the other operand is an integer). So in this case, ‘0xFF’ is converted to its integer equivalent which is 255. Since 255 = 255, this condition evaluates to true. (Note that this only works for hex strings, not for octal or binary strings.)
+
+But if that’s the case, shouldn’t the statement `$x = (int)'0xFF'`; execute and result in `$x` being set equal to 255?
+
+Well, the statement does execute, but it results in `$x` being set equal to 0, not 255 (i.e., it is not set to the integer equivalent of `‘0xFF’`). The reason is that the explicit type cast of the string to an integer uses `convert_to_long` (which works differently than the `is_numeric_string` function that was used in evaluating the conditional expression, as explained above). `convert_to_long` processes the string one character at a time from left to right and stops at the first non-numeric character that it reaches. In the case of ‘0xFF’, the first non-numeric character is ‘x’, so the only part of the string processed is the initial ‘0’. As a result, the value returned by (int)'0xFF' is 0, so when the code completes, $x will be equal to 0.
+:::
+
+### What will be the output of the code below and why?
+```php
+$x = 5;
+echo $x;
+echo "<br />";
+echo $x+++$x++;
+echo "<br />";
+echo $x;
+echo "<br />";
+echo $x---$x--;
+echo "<br />";
+echo $x;
+```
+::: warning Answer
+The output will be as follows:
+```text
+5
+11
+7
+1
+5
+```
+Here’s are the two key facts that explain why:
+
+- The term `$x++` says to use the current value of `$x` and then increment it. Similarly, the term `$x--` says to use the current value of `$x` and then decrement it.
+- The increment operator (++) has higher precedence then the sum operator (+) in order of operations.
+With these points in mind, we can understand that `$x+++$x++` is evaluated as follows: The first reference to `$x` is when its value is still 5 (i.e., before it is incremented) and the second reference to `$x` is then when its value is 6 (i.e., before it is again incremented), so the operation is `5 + 6` which yields 11. After this operation, the value of `$x` is 7 since it has been incremented twice.
+
+Similarly, we can understand that `$x---$x--` is evaluated as follows: The first reference to `$x` is when its value is still 7 (i.e., before it is decremented) and the second reference to `$x` is then when its value is 6 (i.e., before it is again decremented), so the operation is `7 - 6` which yields 1. After this operation, the value of `$x` is back to its original value of 5, since it has been incremented twice and then decremented twice.
+:::
+
+### What will be the values of $a and $b after the code below is executed? Explain your answer.
+```php
+$a = '1';
+$b = &$a;
+$b = "2$b";
+```
+::: warning Answer
+Both `$a` and `$b` will be equal to the string `"21"` after the above code is executed.
+
+Here’s why:
+
+The statement `$b = &$a;` sets `$b` equal to a reference to `$a` (as opposed to setting $b to the then-current value of `$a`). Thereafter, as long as `$b` remains a reference to `$a`, anything done to $a will affect `$b` and vice versa.
+
+So when we subsequently execute the statement `$b = "2$b", $b` is set equal to the string `"2"` followed by the then-current value of `$b` (which is the same as `$a`) which is 1, so this results in `$b` being set equal to the string `"21"` (i.e., the concatenation of `"2"` and `"1"`). And, since $b is a reference to `$a`, this has the same affect on the value of `$a`, so both end up equal to `"21"`.
+:::
+
+### Consider the following code:
+```php
+$str1 = 'yabadabadoo';
+$str2 = 'yaba';
+if (strpos($str1,$str2)) {
+    echo "\"" . $str1 . "\" contains \"" . $str2 . "\"";
+} else {
+    echo "\"" . $str1 . "\" does not contain \"" . $str2 . "\"";
+}
+```
+The output will be:
+```php
+"yabadabadoo" does not contain "yaba"
+```
+Why? How can this code be fixed to work correctly?
+::: warning Answer
+The problem here is that `strpos()` returns the starting position index of `$str2` in `$str1` (if found), otherwise it returns `false`. So in this example, `strpos()` returns `0` (which is then coerced to `false` when referenced in the `if` statement). That’s why the code doesn’t work properly.
+
+The correct solution would be to explicitly compare the value returned by `strpos()` to `false` as follows:
+```php
+$str1 = 'yabadabadoo';
+$str2 = 'yaba';
+if (strpos($str1,$str2) !== false) {
+    echo "\"" . $str1 . "\" contains \"" . $str2 . "\"";
+} else {
+    echo "\"" . $str1 . "\" does not contain \"" . $str2 . "\"";
+}
+```
+Note that we used the `!==` operator, not just the `!=` operator. If we use `!=`, we’ll be back to the problem that `0` is coerced to `false` when referenced in a boolean expression, so `0 != false` will evaluate to `false`.
+:::
+
 ### Determine the value of $pear after executing the code below. What will strlen($pear) return? Explain your answer.
 ```php
 $pear = ‘PEAR ’;
@@ -22,9 +142,9 @@ var_dump(‘042’ === 42);
 ```
 ::: warning Answer
 This question quizzes the coder on how the PHP interpreter handles numbers and strings.
-i. var_dump(42 == 042); will output bool(false) because the PHP interpreter treats leading zeroes as octals. 042 is 32 in decimal, which does not equal 42.
-ii. var_dump(‘042’ == 42); will output bool(true) because PHP interpreter will coerce the string into an integer but ignore the leading zero. 42 is equal to 42.
-iii. var_dump(‘042’ === 42); will output bool(false) because the === operator performs a stricter comparison and will not coerce the integer into a string.
+- `var_dump(42 == 042);` will output `bool(false)` because the PHP interpreter treats leading zeroes as octals. `042` is `32` in decimal, which does not equal 42.
+- `var_dump(‘042’ == 42);` will output `bool(true)` because PHP interpreter will coerce the string into an integer but ignore the leading zero. 42 is equal to 42.
+- `var_dump(‘042’ === 42);` will output `bool(false)` because the `===` operator performs a stricter comparison and will not coerce the integer into a string.
 :::
 
 ### Explain why the two code snippets below will evaluate to the same output.
@@ -77,6 +197,81 @@ echo $a.", ".$b;
 21, 21
 :::
 
+### What is the problem with the code below? What will it output? How can it be fixed?
+```php
+$referenceTable = array();
+$referenceTable['val1'] = array(1, 2);
+$referenceTable['val2'] = 3;
+$referenceTable['val3'] = array(4, 5);
+
+$testArray = array();
+
+$testArray = array_merge($testArray, $referenceTable['val1']);
+var_dump($testArray);
+$testArray = array_merge($testArray, $referenceTable['val2']);
+var_dump($testArray);
+$testArray = array_merge($testArray, $referenceTable['val3']);
+var_dump($testArray);
+```
+::: warning Answer
+The output will be as follows:
+```text
+array(2) { [0]=> int(1) [1]=> int(2) }
+NULL
+NULL
+```
+You may also see two warnings generated, similar to the following:
+```text
+Warning: array_merge(): Argument #2 is not an array
+Warning: array_merge(): Argument #1 is not an array
+```
+:::
+
+### Explain
+`PHP_INT_MAX` is a PHP constant that corresponds to the largest supported integer value (value is based on the version of PHP being run and the platform it is running on).
+
+Assume that `var_dump(PHP_INT_MAX)` will yield `int(9223372036854775807)`.
+
+In that case, what will be the result of `var_dump(PHP_INT_MAX + 1)`? Also, what will be the result of `var_dump((int)(PHP_INT_MAX + 1))`?
+
+NOTE: It’s not important to supply the exact value when answering the question, but rather to explain what will happen and why.
+::: warning Answer
+The result of `var_dump(PHP_INT_MAX + 1)` will be displayed as a double (in the case of this specific example, it will display `double(9.2233720368548E+18))`. The key here is for the candidate to know that PHP handles large integers by converting them to doubles (which can store larger values).
+
+And interestingly, the result of `var_dump((int)(PHP_INT_MAX + 1))` will be displayed as a negative number (in the case of this specific example, it will display `int(-9223372036854775808))`. Again, the key here is for the candidate to know that the value will be displayed as a negative number, not to know the precise value.
+:::
+
+### How would you sort an array of strings to their natural case-insensitive order, while maintaing their original index association?
+For example, the following array:
+```text
+array(
+	'0' => 'z1',
+	'1' => 'Z10',
+	'2' => 'z12',
+	'3' => 'Z2',
+	'4' => 'z3',
+)
+```
+After sorting, should become:
+```text
+array(
+	'0' => 'z1',
+	'3' => 'Z2',
+	'4' => 'z3',
+	'1' => 'Z10',
+	'2' => 'z12',
+)
+```
+::: warning Answer
+The trick to solving this problem is to use three special flags with the standard `asort()` library function:
+
+```php
+asort($arr, SORT_STRING|SORT_FLAG_CASE|SORT_NATURAL)
+```
+The function `asort()` is a variant of the standard function `sort()` that preserves the index association. The three flags used above `SORT_STRING`, `SORT_FLAG_CASE` and `SORT_NATURAL` forces the sort function to treat the items as strings, sort in a case-insensitive way and maintain natural order respectively.
+
+Note: Using the `natcasesort()` function would not be a correct answer, since it would not maintain the original index association of the elements of the array.
+:::
 ## IP address
 How do you proceed if you need to get a user’s IP address?”
 ::: warning Answer
@@ -137,6 +332,11 @@ The answer to this interview question determines whether the candidate has any k
 :::
 
 ## Constants
+### What are the differences between PHP constants and variables?
+::: warning Answer
+The value of the constant cannot change during the script execution.
+:::
+
 ### Can the value that was previously assigned to a constant change during script execution?
 
 ::: warning Answer
@@ -144,6 +344,22 @@ No. When a value has been assigned to a constant, it cannot change during the sc
 :::
 
 ## Functions
+### What is the difference between include_once() and require_once(), which one would you use in circumstances where you need to connect to a database, and why?
+::: warning Answer
+`include_once()` or `include` allows a file to be included, and in cases where the file is missing or has the wrong name, we receive an error message and execution will still continue regardless.
+
+On the other hand, `require_once()` or require would be suitable in cases where a file needs to be included once and if it is missing or has a wrong name then we receive a fatal error and the execution of the program stops.
+
+`require_once` or `require` is a suitable method in cases where a database connection file is involved and helps alleviate the possibility of multiple instances of the same file being included several times.
+:::
+
+### What is use of the header() function in PHP?
+::: warning Answer
+- `header()` is used to redirect from one page to another: `header("Location: index.php")`;
+- `header()` is used to send an HTTP status code: `header("HTTP/1.0 this Not Found")`;
+- `header()` is used to send a raw HTTP header: `header('Content-Type: application/json')`;
+:::
+
 ### What is the difference between unset() and unlink()?
 
 ::: warning Answer
@@ -175,6 +391,13 @@ The optimal answer here is to use the count () function.
 :::
 
 ## Frameworks
+### What is PEAR in PHP?
+::: warning Answer
+PEAR (PHP Extension and Application Repository) is a framework and repository for reusable PHP components. PEAR is a code repository containing all kinds of php code snippets and libraries.
+
+PEAR also offers a command-line interface that can be used to automatically install packages.
+:::
+
 ### Could you name some PHP frameworks?
 ::: warning Answer
 During the interview, the interviewed candidate must mention at least three PHP frameworks among this list:
@@ -211,7 +434,6 @@ The compilation time has been included once in each file. On the other hand, if 
 Another difference between these two commands is that require always gives a fatal error if the requested file is missing, while include will simply display a warning, and continue to compile the code.
 :::
 
-## Functions
 ### The value of the input variable is 9,3,5,5,7,8. How do I get the sum of the numbers of this list?
 ::: warning Answer
 ```php
@@ -235,6 +457,16 @@ A candidate who is unable to answer it does not have sufficient PHP skills
 ### What is the mail() function used for?
 ::: warning Answer
 The answer to this question is that this function can be used to send an email from a PHP script.
+:::
+
+### What are the differences between echo and print in PHP?
+::: warning Answer
+`echo` and `print` are largely the same in PHP. Both are used to output data to the screen.
+
+The only differences are as follows:
+
+- `echo` does not return a value whereas `print` does return a value of 1 (this enables `print` to be used in expressions).
+- `echo` can accept multiple parameters (although such usage is rare) while print can only take a single argument.
 :::
 
 ## Scope
@@ -269,6 +501,11 @@ MySQL is the most popular database system used with PHP. The answer to this inte
 ## Sessions
 ::: tip Read More
 - [www.w3schools.com/php/php_sessions.asp](https://www.w3schools.com/php/php_sessions.asp)
+:::
+
+### What is the difference between a session and cookies?
+::: warning TIP
+A session stores the value on the server and cookies store the value in the user’s browser.
 :::
 
 ### What are PHP sessions and how do they work?
@@ -310,3 +547,18 @@ This is a good way to gauge a developer’s understanding of autoloading. Whenev
 bool spl_autoload_register ([ callable $autoload_function [, bool$throw = true [, bool $prepend = false ]]] )
 ```
 :::
+
+## General
+### How can you tell if a number is even or odd without using any condition or loop?
+::: warning Answer
+```php
+$arr=array("0"=>"Even","1"=>"Odd");
+
+$check=13;
+
+echo "Your number is: ".$arr[$check%2];
+```
+:::
+### What error types have you faced and how did you fix them?
+### If you need to generate random numbers in PHP, what method would you follow?
+### How xdebug is configured?
