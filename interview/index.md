@@ -29,3 +29,5 @@ pageClass: interview
 - [www.codingame.com/work/php-interview-questions-update-2019](https://www.codingame.com/work/php-interview-questions-update-2019/?utm_source=google&utm_medium=ppc&utm_campaign=dsa&gclid=CjwKCAiAsIDxBRAsEiwAV76N8xrDIloQ4DtZesUnnnwOw_AKbS3s0NqfKYdgzrs9NCG0TkiSGj0hfhoC5skQAvD_BwE)
 - [www.upwork.com/i/interview-questions/php/](https://www.upwork.com/i/interview-questions/php/)
 - [resources.workable.com/php-developer-interview-questions](https://resources.workable.com/php-developer-interview-questions)
+- [www.codingame.com/work/javascript-interview-questions](https://www.codingame.com/work/javascript-interview-questions/?gclid=CjwKCAiAgqDxBRBTEiwA59eEN0aTt9MHD5IW1KRgIibzBO9Vuha0hhCmbp50O7ROv48PDT4LStfMlxoC74IQAvD_BwE)
+- [career.guru99.com/top-50-mysql-interview-questions-answers](https://career.guru99.com/top-50-mysql-interview-questions-answers/)

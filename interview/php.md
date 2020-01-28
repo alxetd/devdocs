@@ -561,3 +561,4 @@ echo "Your number is: ".$arr[$check%2];
 :::
 ### What error types have you faced and how did you fix them?
 ### If you need to generate random numbers in PHP, what method would you follow?
+### How xdebug is configured?
