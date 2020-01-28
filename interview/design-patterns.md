@@ -2,6 +2,8 @@
 pageClass: design-patterns
 ---
 # Design patterns
+[[toc]]
+
 ### What are some of your favorite PHP design patterns?
 #### Answer
 The Singleton: Used when you only want to allow access to one instance of a particular class.

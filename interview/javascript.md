@@ -2,6 +2,8 @@
 pageClass: javascript
 ---
 # Javascript
+[[toc]]
+
 ## Code
 ### Write code to convert an array of strings to an array of the lengths of those strings.
 This should be a relatively easy exercise for someone familiar with Javascript to complete. An ideal solution to this problem should look something like this:

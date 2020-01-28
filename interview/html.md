@@ -1,4 +1,6 @@
 # HTML
+[[toc]]
+
 ## Responsive
 Consider a responsive site design that requires a full-width image in all responsive states. What would be the correct way to code this to ensure the page loads the smallest image required to fill the space?
 ### Answer

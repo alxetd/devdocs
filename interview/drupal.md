@@ -2,7 +2,15 @@
 pageClass: drupal
 ---
 # Drupal
+[[toc]]
 
+## Code
+### Explain using module how you can drop the table?
+::: warning Answer
+To drop the table you can use `db_drop_table` in install file.
+:::
+
+## General
 ### What is Drupal?
 ::: warning Answer
 Drupal is free open source CMS (content management system) written in PHP.
@@ -53,7 +61,7 @@ Meanwhile, underlying Drupal 8 features modern, object-oriented code that's the 
 In Drupal 8, 'Clean URLs' are enabled by default and can't be disabled.
 :::
 
-### What is a Module in drupal?
+### What is a module in drupal?
 ::: warning Answer
 A module is software (code) that extends Drupal features and/or functionality
 
@@ -172,6 +180,11 @@ Hooks are how modules can interact with the core code of Drupal. They make it po
 - optional modulename.install
 :::
 
+### What is a theme?
+::: warning Answer
+A theme is a collection of files that define the presentation layer. You can also create one or more "sub-themes" or variations on a theme. Only the .info.yml file is required, but most themes and sub-themes will use other files as well.
+:::
+
 ### What do you mean by subtheme in Drupal?
 ::: warning Answer
 It are just like any other theme, with one difference:
@@ -251,3 +264,55 @@ It is a structured file that consists of a list of differences between one set o
 ### What are services in Drupal 8?
 ### How to enable a module in Drupal 8?
 ### What are the difference between WordPress and Drupal?
+
+### Does Drupal provides support?
+::: warning Answer
+Like with all open-source projects there is no commercial support available. Though, there is a vast online community for Drupal available via Forums and IRC online chat who are more than eager to answer your queries.
+:::
+
+### Explain what is render array in Drupal?
+::: warning Answer
+For Drupal content render arrays are the basic building blocks.  In Drupal, render arrays provide you a structured way to programmatically change the content before it is displayed.
+:::
+
+### Why Drupal needs database? What databases are supported?
+::: warning Answer
+Drupal stores its information in the database like individual pages, registered users and so on.  For your Drupal site, database forms the back end; it supports MySQL /MariaDB, PostgreSQL and in Drupal 7, SQLite.
+:::
+
+### Explain what is Drupal cron?
+::: warning Answer
+To execute commands or scripts automatically at specified time and date intervals, you have to use Drupal cron.
+:::
+
+### Explain what is Drupal weight?
+::: warning Answer
+The term Drupal weight is used to describe the priority or order in which the function is processed, or block/ node is displayed.
+
+A heavier (+10) weights will appear lower in lists while a lower weight (-10) will float to the top of lists.
+:::
+
+### Explain what Drupal distributions is and when to use?
+::: warning Answer
+Distributions are full copies of Drupal, which includes Drupal Core, along with additional software as modules, themes, libraries and installation profiles.
+:::
+
+###  What is DRUSH in Drupal?
+::: warning Answer
+DRUSH is a command line shell and UNIX scripting interface for Drupal
+:::
+
+### Explain how database system of Drupal works?
+::: warning Answer
+In a database Drupal stores information, and each information has its own database table.  For example, the basic information regarding the nodes of your site are stored and kept in the node table, and if you use the CCK module to add fields to your nodes, the field information is stored in a separate table.
+:::
+
+### Explain how caching work in Drupal?
+::: warning Answer
+Through caching Drupal allows to speed up website using different configuration like page caching, block caching and lifetime for cached pages.
+
+- Page Caching:  It enables the entire HTML of each page to be stored in the database.  It reduces the amount of queries needed
+- Block Caching:  You can set the cache setting for a block in views, when block created by views
+- Minimum cache lifetime:  It is the amount of time before the page cache is cleared. On each cron run, page caches are cleared.
+- Expiration of cached pages: It only applies for an external mechanism, for example, your browser cache or varnish
+:::

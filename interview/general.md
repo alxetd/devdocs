@@ -2,6 +2,7 @@
 pageClass: general
 ---
 # General
+[[toc]]
 
 ### What do you think of the pair programming?
 ::: warning Answer
