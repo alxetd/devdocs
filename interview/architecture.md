@@ -1,4 +1,6 @@
 # Architecture
+[[toc]]
+
 ## SOLID Principles
 The purpose of SOLID design principles
 - To make to code more maintainable.

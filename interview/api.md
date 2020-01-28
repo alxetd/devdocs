@@ -2,6 +2,8 @@
 pageClass: api
 ---
 # Api
+[[toc]]
+
 ## Integrating third party services
 A common issue when integrating third party services within your own API requests is having to wait for the response, and as such, forcing the user to have to wait for longer.
 How would you go about avoiding this? Name any relevant technologies if appropriate

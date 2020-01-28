@@ -2,6 +2,8 @@
 pageClass: mysql
 ---
 # MySql
+[[toc]]
+
 ## Queries
 ### Consider the following database table design:
 ```sql

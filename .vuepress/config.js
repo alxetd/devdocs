@@ -94,7 +94,10 @@ module.exports = {
         ''
       ],
       '/drupal/': [
-        ''
+        '',
+        'acquia-dev-desktop',
+        'drupal-console',
+        'drush',
       ],
       '/html/': [
         ''
@@ -105,6 +108,7 @@ module.exports = {
         'architecture',
         'css',
         'design-patterns',
+        'drupal',
         'general',
         'html',
         'javascript',

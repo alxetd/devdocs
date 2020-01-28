@@ -1,10 +1,17 @@
 # Drupal
 
+## Entity [Read more](https://www.drupal.org/docs/8/api/entity-api)
+### What is an entity?
+Entity types in core come in two variants.
+- Configuration Entity.
+- Content Entity.
+
 ## Commands
 ```bash
 drush en -y search_api_solr
 drush cache-rebuild
 ```
+
 ## Modules
 ```bash
 composer require drupal/search_api_solr

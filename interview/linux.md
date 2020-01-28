@@ -1,4 +1,6 @@
 # Linux
+[[toc]]
+
 ## Grep
 ::: tip Read More
 - [www.howtoforge.com/tutorial/linux-grep-command/](https://www.howtoforge.com/tutorial/linux-grep-command/)
