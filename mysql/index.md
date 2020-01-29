@@ -15,6 +15,20 @@ mysqldump -u username -p database_name > data-dump.sql
 mysql -u username -p new_database < data-dump.sql
 ```
 
+```sql
+DESCRIBE products;
+```
+
+Add column
+```sql
+ALTER TABLE products ADD COLUMN price DECIMAL(5,2);
+```
+
+Delete column
+```sql
+ALTER TABLE products DROP COLUMN brand;
+```
+
 ## Articles
 - [www.digitalocean.com/community/tutorials/how-to-import-and-export-databases-in-mysql-or-mariadb](https://www.digitalocean.com/community/tutorials/how-to-import-and-export-databases-in-mysql-or-mariadb)
 

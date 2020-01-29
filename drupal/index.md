@@ -6,6 +6,14 @@ Entity types in core come in two variants.
 - Configuration Entity.
 - Content Entity.
 
+### Core entities
+- Node/Content
+- Users
+- Custom Blocks
+- Vocabulary and Terms
+- Comments
+- Files
+
 ## Commands
 ```bash
 drush en -y search_api_solr
