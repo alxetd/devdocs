@@ -10,6 +10,21 @@ pageClass: drupal
 To drop the table you can use `db_drop_table` in install file.
 :::
 
+### Working with entities
+::: warning Answer
+```php
+$entity = entity_create($entity_type, $data_array); # Create entity
+$entity = entity_load($entity_type, $id); # Read entity
+$entity->save(); # Update entity
+$entity->delete(); # Delete entity
+```
+Common properties
+```php
+$entity->id();
+$entity->isNew();
+```
+:::
+
 ## General
 ### What is Drupal?
 ::: warning Answer
@@ -258,6 +273,20 @@ It is a structured file that consists of a list of differences between one set o
 :::
 
 ### What is an entity?
+::: warning Answer
+A single "unit" of structured data
+- Could be a blog post or article
+- Could be a single user account
+- Could be a single taxonomy term and its metadata
+- Could be some other structured data you create
+- Content is not an entity, a node is an entity type... but the article is an entity.
+
+Entities, in Drupal, are objects that are used for persistent storage of content and configuration information.
+
+Loadable thingy, that can optionally be fieldable. i.e. nodes, users, taxonomy terms, taxonomy vocabularies, files.
+:::
+
+### What is an entity type?
 ### What are the bundles?
 ### What is difference between drupal 7 and 8?
 ### What is dependency injection in Drupal 8?

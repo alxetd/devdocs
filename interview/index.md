@@ -36,6 +36,7 @@ pageClass: interview
 
 ### MySQL
 - [career.guru99.com/top-50-mysql-interview-questions-answers](https://career.guru99.com/top-50-mysql-interview-questions-answers/)
+- [https://www.softwaretestinghelp.com/mysql-interview-questions/](https://www.softwaretestinghelp.com/mysql-interview-questions/)
 
 ### Drupal
 - [www.fullstacktutorials.com/interviews/drupal-8-interview-questions-and-answers-for-experienced-developers-15](https://www.fullstacktutorials.com/interviews/drupal-8-interview-questions-and-answers-for-experienced-developers-15.html)
