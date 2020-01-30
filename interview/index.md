@@ -20,7 +20,18 @@ pageClass: interview
 - VueJS
 - Website optimizations
 
-## Online questions
+## What en employer wants to find out about you?
+### What experience do you have?
+### At what level are your skills?
+### Are you a professional?
+### What mindset do you have?
+### Are you passionate about what you do?
+### Are you sociable?
+### Are you responsible?
+
+## General questions
+### On what projects did you worked on until now?
+### What technologies did you worked with?
 
 ## Sources
 ### Architecture
