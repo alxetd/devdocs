@@ -16,6 +16,7 @@ The MVC pattern may not be used or required in your environment, although it is 
 
 ### What is a database?
 ::: warning Answer
+A database is a collection of data stored in a format that can easily be accessed.
 :::
 
 ### What is DBMS
@@ -35,8 +36,18 @@ DBMS contains 6 models:
 - Object oriented relational database management system (OORDMS)
 :::
 
+### Give examples of relational database management system
+::: warning Answer
+- MySQL
+- SQL Server
+- Oracle
+:::
+
 ### What is SQL?
 ::: warning Answer
+SQL (Structured query language)
+- NoSQL systems don't understand SQL
+- All relational database management systems understand sql.
 :::
 
 ### What is a ER Diagram?
