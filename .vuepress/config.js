@@ -67,6 +67,7 @@ module.exports = {
           { text: 'Apache', link: '/apache/' },
           { text: 'Docker', link: '/docker/' },
           { text: 'Drupal', link: '/drupal/' },
+          { text: 'Git', link: '/git/' },
           { text: 'Laravel', link: '/laravel/' },
           { text: 'Linux', link: '/linux/' },
           { text: 'MySql', link: '/mysql/'},
