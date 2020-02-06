@@ -1,6 +1,4 @@
-# Linux
-## Concepts
-- ssh
+# Git
 
 ## Commands
 ### git config
@@ -20,12 +18,29 @@ git reset HEAD^	# Since we dont specify "--hard", files stay in working director
 git reset --hard origin/master
 ```
 
+### git remote
+```bash
+git remote
+git remote show origin # If referential integrity is intact
+git remote set-url origin git@bitbucket.org:alxetd_dev/alxetd.git
+git remote set-url origin git@bitbucket.org:alxetd_dev/alxetd.git --push
+git remote rename origin drupal	 
+git remote add origin path/to/your/central/git/repo	
+git remote add upstream path/to/your/central/git/repo	
+git remote -v
+```
+
+### git clone
+```bash
+git clone --branch <tag_name> <repo_url>
+git clone --depth DEPTH --single-branch --branch BRANCH REPO_URL
+```
+
+### general
 ```bash
 git checkout @{-1}
 git checkout - #	Checkout to previous branch	git;linux
 git commit -m TEXT --no-verify
-git clone --branch <tag_name> <repo_url>	
-git clone --depth DEPTH --single-branch --branch BRANCH REPO_URL	
 git branch -d BRANCH	The -d option is an alias for --delete, which only deletes the branch if it has already been fully merged in its upstream branch. 
 git branch -D BRANCH	Is an alias for --delete --force, which deletes the branch irrespective of its merged status.
 git push origin --delete BRANCH	Deletes a remote branch
@@ -37,24 +52,16 @@ git clean -f -X	Remove ignored files
 git clean -f -x	remove ignored and non-ignored files
 git pull	
 git config --get remote.origin.url	If referential integrity has been broken
-git remote show origin	If referential integrity is intact
-git remote set-url origin git@bitbucket.org:alxetd_dev/alxetd.git	
 git init --bare fooproject.git	creates a new directory called fooproject.git that contains all of the git objects.
 git tag	
 git tag -a <version>	
 git push origin <tag_name>	
 git push --tags	
-git remote rename origin drupal	 
-git remote add origin path/to/your/central/git/repo	
-git remote add upstream path/to/your/central/git/repo	
-git remote	
-git remote -v	Shows origin
 git fetch --prune	deleting the refs to the branches that dont exist on the remote
 git log --oneline	
 git rebase -i HEAD~3	Interactive mode. Commit to replay onto. Pops up an editor with the rebase script.
 git rebase --continue	
 git commit --amend	
-	
 git log --oneline --all --decorate	
 git rebase master	
 git checkout branch
