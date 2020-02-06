@@ -31,3 +31,8 @@ document.getElementById('id').addEventListener('click', functionName);
 ```javascript
 document.getElementById('id').innerText = 'new text';
 ```
+
+```javascript
+encodeURIComponent();
+decodeURIComponent();
+```

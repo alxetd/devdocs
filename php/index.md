@@ -1,7 +1,9 @@
 # Php
 ## Filters
 ::: tip Read More
-- [www.w3schools.com/php/php_filter.asp](https://www.w3schools.com/php/php_filter.asp)
+- [https://www.php.net/](https://www.php.net/)
+- [www.w3schools.com/php](https://www.w3schools.com/php)
+- [https://www.phptpoint.com/advanced-php-tutorial/](https://www.phptpoint.com/advanced-php-tutorial/)
 :::
 
 Validating data = Determine if the data is in proper form.
@@ -31,4 +33,30 @@ mktp40: php /home/stefan.boila/sb1/sb1.mktp-ro/release-45b19b1783518578bcf266c9f
 xDebug	php /home/eduard.trandafir/et5/et5.mktp-ro/htdocs/../app/console rabbitmq:consumer -w mktp.qevent.low -m 1		
 Gearman	sudo systemctl restart gearmand.service		
 Gearman	systemctl status gearmand		
+```
+
+### php functions
+```php
+$text = 'Text';
+
+urlencode($text);
+urldecode($text);
+
+htmlentities($text);
+html_entity_decode($text);
+
+htmlspecialchars($text);
+htmlspecialchars_decode($text);
+
+strip_tags($text);
+
+preg_replace();
+```
+
+## Security
+### XSS attacks
+
+## Composer
+```bash
+COMPOSER_MEMORY_LIMIT=-1 composer require package
 ```

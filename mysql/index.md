@@ -4,6 +4,12 @@
 - [https://www.mysql.com](https://www.mysql.com)
 
 ## Resources
+### SELECT
+### UPDATE
+### WHERE
+### LIMIT
+### JOIN
+### UNION
 
 ## Useful commands
 
@@ -29,6 +35,19 @@ Delete column
 ALTER TABLE products DROP COLUMN brand;
 ```
 
+Create table from another table
+```sql
+CREATE TABLE orders_archived AS 
+SELECT * FROM orders;
+```
+
+Insert data from another table
+```sql
+INSERT INTO orders_archived
+SELECT *
+FROM orders
+WHERE order_date < '2019-01-01';
+```
 ## Articles
 - [www.digitalocean.com/community/tutorials/how-to-import-and-export-databases-in-mysql-or-mariadb](https://www.digitalocean.com/community/tutorials/how-to-import-and-export-databases-in-mysql-or-mariadb)
 

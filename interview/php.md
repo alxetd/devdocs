@@ -478,6 +478,18 @@ The candidate must mention here the three existing scope levels of PHP which are
 :::
 
 ## Operators
+### Bitwise operators
+::: warning Answer
+```text
+& (Bitwise AND) 
+| (Bitwise OR) 
+^ (Bitwise XOR )
+~ (Bitwise NOT)
+>> (Bitwise Right Shift)
+<< (Bitwise Left Shift)
+```
+:::
+
 ### Why should you use === and not ==?
 ::: warning Answer
 === and == are two PHP comparison operators.
@@ -568,3 +580,146 @@ xdebug.remote_enable=1
 zend_extension="/Applications/DevDesktop/php7_1/ext/xdebug.so"
 ```
 :::
+
+### Explain how you can update Memcached when you make changes to PHP?
+::: warning Answer
+When PHP changes you can update Memcached by
+
+- Clearing the Cache proactively: Clearing the cache when an insert or update is made
+- Resetting the Cache: It is similar to the first method but rather than just deleting the keys and waiting for the next request for the data to refresh the cache, reset the values after the insert or update.
+:::
+
+### Explain whether it is possible to share a single instance of a Memcache between multiple PHP projects?
+::: warning Answer
+Yes, it is possible to share a single instance of Memcache between multiple projects. Memcache is a memory store space, and you can run memcache on one or more servers. You can also configure your client to speak to a particular set of instances. So, you can run two different Memcache processes on the same host and yet they are completely independent. Unless, if you have partitioned your data, then it becomes necessary to know from which instance to get the data from or to put into.
+:::
+
+### Is it possible to use COM component in PHP?
+::: warning Answer
+Yes, it's possible to integrate (Distributed) Component Object Model components ((D)COM) in PHP scripts which is provided as a framework.
+:::
+
+### What is the default session time in PHP?
+::: warning Answer
+The default session time in php is until the closing of the browser
+:::
+
+### Is it possible to destroy a cookie?
+::: warning Answer
+Yes, it is possible by setting the cookie with a past expiration time.
+:::
+
+### Is it possible to extend the execution time of a PHP script?
+::: warning Answer
+The use of the set_time_limit(int seconds) enables us to extend the execution time of a PHP script. The default limit is 30 seconds.
+:::
+
+### How can we pass the variable through the navigation between the pages?
+::: warning Answer
+It is possible to pass the variables between the PHP pages using sessions, cookies or hidden form fields.
+:::
+
+### What is the difference between characters \034 and \x34?
+::: warning Answer
+\034 is octal 34 and \x34 is hex 34.
+:::
+
+### What are the three classes of errors that can occur in PHP?
+::: warning Answer
+The three basic classes of errors are notices (non-critical), warnings (serious errors) and fatal errors (critical errors).
+:::
+
+### Is it possible to protect special characters in a query string?
+::: warning Answer
+Yes, we use the urlencode() function to be able to protect special characters.
+:::
+
+### Php magic methods
+::: warning Answer
+```php
+public function __construct() {}
+public function __destruct() {}
+public function __get() {}
+public function __set() {}
+public function __call() {}
+public function __callStatic() {}
+public function __sleep() {}
+public function __wakeup() {}
+public function __clone() {}
+public function __toString() {}
+public function __invoke() {}
+public function __debugInfo() {}
+```
+
+Example
+```php
+class Animal{
+ 
+  public function __construct() {
+    $this->created = time();
+    $this->logfile_handle = fopen('/tmp/log.txt', 'w');
+  }
+ 
+  public function __destruct() {
+    fclose($this->logfile_handle);
+  }
+}
+```
+:::
+
+### Php override
+
+### Php overload
+
+## Php functions
+### Array functions
+```php
+array_key_exists ( mixed $key , array $array ) : bool
+in_array ( mixed $needle , array $haystack [, bool $strict = FALSE ] ) : bool
+array_diff_key ( array $array1 , array $array2 [, array $... ] ) : array
+array_diff ( array $array1 , array $array2 [, array $... ] ) : array
+array_map ( callable $callback , array $array1 [, array $... ] ) : array
+unset ( mixed $var [, mixed $... ] ) : void
+range ( mixed $start , mixed $end [, number $step = 1 ] ) : array
+shuffle ( array &$array ) : bool
+is_array ( mixed $var ) : bool
+is_bool ( mixed $var ) : bool
+is_callable ( mixed $var [, bool $syntax_only = FALSE [, string &$callable_name ]] ) : bool
+function_exists ( string $function_name ) : bool
+method_exists ( mixed $object , string $method_name ) : bool
+array_keys ( array $array ) : array
+array_keys ( array $array , mixed $search_value [, bool $strict = FALSE ] ) : array
+array_values ( array $array ) : array
+count ( mixed $array_or_countable [, int $mode = COUNT_NORMAL ] ) : int
+array_sum ( array $array ) : number
+array_filter ( array $array [, callable $callback [, int $flag = 0 ]] ) : array
+array_reduce ( array $array , callable $callback [, mixed $initial = NULL ] ) : mixed
+array_walk ( array &$array , callable $callback [, mixed $userdata = NULL ] ) : bool
+array_slice ( array $array , int $offset [, int $length = NULL [, bool $preserve_keys = FALSE ]] ) : array
+array_chunk ( array $array , int $size [, bool $preserve_keys = FALSE ] ) : array
+var_dump()
+var_export()
+random_bytes();
+random_int();
+preg_replace_callback_array();
+password_hash();
+password_verify();
+```
+### Others
+```php
+$trace = debug_backtrace();
+trigger_error(
+    'Undefined property via __get(): ' . $name .
+    ' in ' . $trace[0]['file'] .
+    ' on line ' . $trace[0]['line'],
+    E_USER_NOTICE);
+```
+### Lamda functions
+```php
+$func = function($value) {
+    return $value * 2;
+};
+
+print_r(array_map($func, range(1, 5)));
+```
+## Common errors

@@ -146,6 +146,12 @@ The async / await keywords are used to allow developers to write code that feels
 Candidates should know when it is appropriate and possible to use these keywords. In particular they should know that async can only be placed before the function keyword on a function definition. This marks the function as returning a Promise. The await keyword can only be used inside such an asynchronous function and must be placed before a call to a function that will return a Promise.
 :::
 
+## Functions
+```javascript
+typeof
+```
+
+
 ## History
 ### What is JavaScript?
 ::: warning Answer

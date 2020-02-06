@@ -5,6 +5,48 @@ pageClass: mysql
 [[toc]]
 
 ## Queries
+### Give any customers born before 1990 50 extra points
+::: warning Answer
+```sql
+USE sql_store;
+
+UPDATE custormers
+SET points = points + 50
+WHERE birth_date < '1990-01-01';
+```
+:::
+
+### Update all invoices for clients in CA and NY states
+::: warning Answer
+```sql
+USE sql_store;
+
+UPDATE invoices
+SET
+    payment_total = invoice_total * 0.5
+    payment_date = due_date
+WHERE client_id IN 
+            (SELECT client_id
+            FROM clients
+            WHERE state IN ('CA', 'NY'));
+```
+:::
+
+### Add comment "Gold customer" to all customers that have more than 3000 points
+::: warning Answer
+```sql
+USE sql_store;
+
+UPDATE orders
+SET
+    comments = 'Gold customer'
+WHERE customer_id IN 
+            (SELECT customer_id
+            FROM customers
+            WHERE points > 3000);
+```
+:::
+
 ### How can you change the name of any existing table by using the SQL statement?
 ::: warning Answer
 The following SQL command is used to rename an existing table of the database.

@@ -36,6 +36,7 @@ pageClass: interview
 ## Sources
 ### Architecture
 - [www.itnext.io/solid-principles-explanation-and-examples-715b975dcad4](https://itnext.io/solid-principles-explanation-and-examples-715b975dcad4)
+- [dzone.com/articles/software-design-principles-dry-and-kiss](https://dzone.com/articles/software-design-principles-dry-and-kiss)
 
 ### Php
 - [www.toptal.com/full-stack/interview-questions](https://www.toptal.com/full-stack/interview-questions)
@@ -44,6 +45,10 @@ pageClass: interview
 - [www.upwork.com/i/interview-questions/php/](https://www.upwork.com/i/interview-questions/php/)
 - [resources.workable.com/php-developer-interview-questions](https://resources.workable.com/php-developer-interview-questions)
 - [www.codingame.com/work/javascript-interview-questions](https://www.codingame.com/work/javascript-interview-questions/?gclid=CjwKCAiAgqDxBRBTEiwA59eEN0aTt9MHD5IW1KRgIibzBO9Vuha0hhCmbp50O7ROv48PDT4LStfMlxoC74IQAvD_BwE)
+- [www.guru99.com/php-interview-questions-answers.html](https://www.guru99.com/php-interview-questions-answers.html)
+- [https://dzone.com/articles/9-magic-methods-php-0](https://dzone.com/articles/9-magic-methods-php-0)
+- [https://www.geeksforgeeks.org/overloading-in-php/](https://www.geeksforgeeks.org/overloading-in-php/)
+- [https://www.geeksforgeeks.org/php-bitwise-operators/](https://www.geeksforgeeks.org/php-bitwise-operators/)
 
 ### MySQL
 - [career.guru99.com/top-50-mysql-interview-questions-answers](https://career.guru99.com/top-50-mysql-interview-questions-answers/)
