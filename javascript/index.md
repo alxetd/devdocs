@@ -1,4 +1,8 @@
 # Javascript
+## Sources
+- [https://www.w3schools.com/js/default.asp](https://www.w3schools.com/js/default.asp)
+- [https://dev.to/damcosset/higher-order-functions-in-javascript-4j8b](https://dev.to/damcosset/higher-order-functions-in-javascript-4j8b)
+
 ## Memory hoisting
 ## Scope & closures
 ## This context
@@ -36,3 +40,15 @@ document.getElementById('id').innerText = 'new text';
 encodeURIComponent();
 decodeURIComponent();
 ```
+
+```javascript
+var a = [1,2,3,4,5];
+a.splice(2,1);
+a.push(10);
+a.pop();
+a.shift();
+a.unshift(1);
+a.sort();
+a.forEach(function(i) { console.log(i); });
+```
+
