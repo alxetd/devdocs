@@ -1,0 +1,29 @@
+---
+
+- name: Check that the .bash_aliases exists
+  stat:
+    path: "{{ home_dir }}/.bash_aliases"
+  register: stat_result
+  tags: [ alias ]
+
+- name: Create .bash_aliases file, if it doesnt exist already
+  file:
+    path: "{{ home_dir }}/.bash_aliases"
+    state: touch
+    mode: 0644
+  when: not stat_result.stat.exists
+  tags: [ alias ]
+
+- name: Add aliases to bash_aliases
+  lineinfile:
+    path: '{{ home_dir }}/.bash_aliases'
+    state: present
+    line: "alias {{ item.name }}='{{ item.command }}'"
+  with_items:
+    - name: "{{ project_name }}"
+      command: "cd /var/www/{{ project_name }}"
+    - name: "{{ project_name }}w"
+      command: "cd /var/www/{{ project_name }}/web"
+    - name: "{{ project_name }}l"
+      command: "cd /var/www/{{ project_name }}/logs"
+  tags: [ alias ]

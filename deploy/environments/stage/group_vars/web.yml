@@ -1,0 +1,33 @@
+---
+
+# Ansible
+ansible_ssh_user: "root"
+
+# General
+project_name: "cod3labs-stage"
+project_password: "5<bmGaj%FZBG#q"
+team_name: "cod3labsstage"
+remote_user: "cod3labsstage"
+remote_group: "cod3labsstage"
+app_name: "Cod3 Labs"
+app_debug: "false"
+app_env: "prod"
+home_dir: "/root"
+
+# Domain
+domain: "stage.cod3labs.com"
+
+# Project
+repository: "git@github.com:cod3labsteam/cod3labs.git"
+
+# Database
+db_name: "{{ project_name }}"
+db_user: "{{ project_name }}"
+db_password: "{{ project_password }}"
+
+# Nginx
+basic_nginx_conf: "true"
+
+# Let's Encrypt
+letsencrypt_email: "thecod3labs@gmail.com"
+

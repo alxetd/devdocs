@@ -1,0 +1,6 @@
+---
+- name: Setup timezone to Europe/Bucharest
+  timezone:
+    name: Europe/Bucharest
+  tags: [ system ]
+

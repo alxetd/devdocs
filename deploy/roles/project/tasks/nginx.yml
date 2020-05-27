@@ -1,0 +1,50 @@
+---
+
+- name: Sets nginx conf file
+  template:
+    src: "templates/nginx/default.conf.j2"
+    dest: "/etc/nginx/sites-available/{{ project_name }}.conf"
+    mode: 0644
+  tags: [ nginx ]
+
+- name: Create nginxconfig.io directory.
+  file:
+    path: "/etc/nginx/nginxconfig.io"
+    state: directory
+  tags: [ nginx ]
+
+- name: Sets php_fastcgi.conf file
+  template:
+    src: "templates/nginx/php_fastcgi.conf.j2"
+    dest: "/etc/nginx/nginxconfig.io/php_fastcgi.conf"
+    mode: 0644
+  tags: [ nginx ]
+
+- name: Sets general.conf file
+  template:
+    src: "templates/nginx/general.conf.j2"
+    dest: "/etc/nginx/nginxconfig.io/general.conf"
+    mode: 0644
+  tags: [ nginx ]
+
+- name: Sets security.conf file
+  template:
+    src: "templates/nginx/security.conf.j2"
+    dest: "/etc/nginx/nginxconfig.io/security.conf"
+    mode: 0644
+  tags: [ nginx ]
+
+- name: Enables new site
+  file:
+    src: "/etc/nginx/sites-available/{{ project_name }}.conf"
+    dest: "/etc/nginx/sites-enabled/{{ project_name }}.conf"
+    state: link
+  notify: restart nginx
+  tags: [ nginx ]
+
+- name: Removes "default" site
+  file:
+    path: "/etc/nginx/sites-enabled/default"
+    state: absent
+  notify: restart nginx
+  tags: [ nginx ]

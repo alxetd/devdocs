@@ -1,0 +1,6 @@
+---
+
+- include: install.yml
+- include: aliases.yml
+- include: config.yml
+- include: git.yml

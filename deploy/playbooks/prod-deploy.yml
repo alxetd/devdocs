@@ -1,0 +1,16 @@
+---
+
+- name: Deploy application code.
+  hosts: web
+  become: true
+#  remote_user: root
+  vars_files:
+    - vars/main.yml
+  pre_tasks:
+    - name: Ensure apt cache is updated.
+      apt: update_cache=true cache_valid_time=600
+
+  roles:
+    - project
+    - geerlingguy.firewall
+    - geerlingguy.certbot

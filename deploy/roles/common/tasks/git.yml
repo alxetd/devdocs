@@ -1,0 +1,24 @@
+---
+- name: Setup default git user.name
+  git_config:
+    name=user.name
+    scope=global
+    value="git_user"
+
+- name: Setup default git user.email
+  git_config:
+    name=user.email
+    scope=global
+    value="git_user"
+
+- name: Set color auto
+  git_config:
+    name: color.ui
+    value: auto
+
+- name: Set git default editor
+  git_config:
+    name: core.editor
+    scope: global
+    value: vim
+

@@ -1,0 +1,38 @@
+---
+
+- name: Create web-root directory.
+  file:
+    path: "/var/www/{{ project_name }}"
+    state: directory
+    owner: www-data
+    group: www-data
+  tags: [ project ]
+
+- name: Clone code from repository
+  git:
+    repo: "{{ repository }}"
+    version: master
+    dest: "/var/www/{{ project_name }}"
+    accept_hostkey: yes
+    force: yes
+    update: yes
+  become: no
+  tags: [ project ]
+
+- name: Set ownership
+  file:
+    path: "/var/www/{{ project_name }}"
+    state: directory
+    recurse: yes
+    owner: www-data
+    group: www-data
+  tags: [ project ]
+
+- name: Set permissions for directories
+  shell: "/usr/bin/find /var/www/{{ project_name }}/web/ -type d -exec chmod 755 {} \\;"
+  tags: [ project ]
+
+- name: Set permissions for files
+  shell: "/usr/bin/find /var/www/{{ project_name }}/web/ -type f -exec chmod 640 {} \\;"
+  tags: [ project ]
+
