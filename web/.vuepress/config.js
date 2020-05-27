@@ -1,6 +1,4 @@
 module.exports = {
-    base: '/docs/',
-    dest: 'public/docs',
     title: 'Docs',
     description: 'A place with all about web development',
     markdown: {
