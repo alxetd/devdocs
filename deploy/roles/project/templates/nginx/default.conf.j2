@@ -12,10 +12,10 @@ server {
 }
 
 server {
-    listen 443 ssl default_server;
+    listen 443 ssl;
 
     server_name {{ domain }};
-    root /var/www/{{ project_name }}/web/public;
+    root /var/www/{{ project_name }}/web/.vuepress/dist;
 
     # index.php
     index index.php index.html index.htm;
@@ -28,11 +28,6 @@ server {
     }
 
     error_page 404 /index.php;
-
-    # handle .php
-    location ~ \.php$ {
-      include nginxconfig.io/php_fastcgi.conf;
-    }
 
     ssl_certificate /etc/letsencrypt/live/{{ domain }}/fullchain.pem;
     ssl_certificate_key /etc/letsencrypt/live/{{ domain }}/privkey.pem;
