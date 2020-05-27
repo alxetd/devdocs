@@ -1,0 +1,49 @@
+---
+
+- name: Remove the Apache test page.
+  file:
+    path: /var/www/html/index.html
+    state: absent
+  tags: [ apache ]
+
+- name: Make sure we have a '{{ remote_group }}' group
+  group:
+    name: "{{ remote_group }}"
+    state: present
+  tags: [ system ]
+
+- name: Allow '{{ remote_group }}' group to have passwordless sudo
+  lineinfile:
+    path: /etc/sudoers
+    state: present
+    regexp: '^%{{ remote_group }}'
+    line: '%{{ remote_group }} ALL=(ALL) NOPASSWD: ALL'
+    validate: '/usr/sbin/visudo -cf %s'
+  tags: [ system ]
+
+- name: Create a new regular user with sudo privileges
+  user:
+    name: "{{ remote_user }}"
+    state: present
+    groups: wheel
+    append: true
+    create_home: true
+    shell: /bin/bash
+  tags: [ system ]
+
+- name: Set authorized key for remote user
+  authorized_key:
+    user: "{{ remote_user }}"
+    state: present
+    key: "{{ copy_local_key }}"
+  tags: [ system ]
+
+- name: Disable password authentication for root
+  lineinfile:
+    path: /etc/ssh/sshd_config
+    state: present
+    regexp: '^#?PermitRootLogin'
+    line: 'PermitRootLogin prohibit-password'
+  tags: [ system ]
+
+- include: install.yml

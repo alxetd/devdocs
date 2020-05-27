@@ -1,0 +1,50 @@
+server {
+    listen 80;
+    listen [::]:80;
+
+    server_name {{ domain }};
+
+    index index.html;
+
+    location / {
+      return 301 https://{{ domain }}$request_uri;
+    }
+}
+
+server {
+    listen 443 ssl default_server;
+
+    server_name {{ domain }};
+    root /var/www/{{ project_name }}/web/public;
+
+    # index.php
+    index index.php index.html index.htm;
+
+    charset utf-8;
+
+    # index.php fallback
+    location / {
+      try_files $uri $uri/ /index.php?$query_string;
+    }
+
+    error_page 404 /index.php;
+
+    # handle .php
+    location ~ \.php$ {
+      include nginxconfig.io/php_fastcgi.conf;
+    }
+
+    ssl_certificate /etc/letsencrypt/live/{{ domain }}/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/{{ domain }}/privkey.pem;
+    ssl_trusted_certificate /etc/letsencrypt/live/{{ domain}}/chain.pem;
+
+    # security
+    include nginxconfig.io/security.conf;
+
+    # logging
+    access_log /var/www/{{ project_name }}/logs/access.log;
+    error_log /var/www/{{ project_name }}/logs/error.log warn;
+
+    # additional config
+    include nginxconfig.io/general.conf;
+}

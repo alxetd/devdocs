@@ -1,0 +1,8 @@
+---
+# Database
+db_name: cod3labs
+db_user: admin
+db_password: admin1234
+
+# General
+home_dir: /root

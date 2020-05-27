@@ -1,0 +1,71 @@
+---
+
+- name: Check that the .bash_aliases exists
+  stat:
+    path: "{{ home_dir }}/.bash_aliases"
+  register: stat_result
+  tags: [ alias ]
+
+- name: Create .bash_aliases file, if it doesnt exist already
+  file:
+    path: "{{ home_dir }}/.bash_aliases"
+    state: touch
+    mode: 0644
+  when: not stat_result.stat.exists
+  tags: [ alias ]
+
+- name: Add aliases to bash_aliases
+  lineinfile:
+    path: "{{ home_dir }}/.bash_aliases"
+    state: present
+    line: "alias {{ item.name }}='{{ item.command }}'"
+  with_items:
+    # Common
+    - name: ".."
+      command: "cd .."
+    - name: "..."
+      command: "cd ../.."
+    - name: ".3"
+      command: "cd ../../.."
+    - name: ".4"
+      command: "cd ../../../.."
+    - name: ".5"
+      command: "cd ../../../../.."
+    - name: "home"
+      command: "cd {{ home_dir }}"
+    # Git
+    - name: "g"
+      command: "git"
+    - name: "gs"
+      command: "git status"
+    - name: "add"
+      command: "git add ."
+    - name: "pull"
+      command: "git pull"
+    - name: "fetch"
+      command: "git fetch"
+    - name: "gp"
+      command: "git push origin HEAD"
+    - name: "develop"
+      command: "git checkout develop"
+    - name: "master"
+      command: "git checkout master"
+    - name: "checkout"
+      command: "git checkout ."
+    - name: "clean"
+      command: "git clean -fd ."
+    # Projects
+    - name: "www"
+      command: "cd /var/www"
+    - name: "log"
+      command: "cd /var/log"
+    - name: "nlog"
+      command: "cd /var/log/nginx"
+    # Composer
+    - name: "ci"
+      command: "composer install"
+    - name: "cu"
+      command: "composer update"
+  tags: [ alias ]
+
+

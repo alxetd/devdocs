@@ -1,0 +1,10 @@
+---
+
+- name: Install low-level utilities
+  become: true
+  apt:
+    pkg:
+      - zip
+      - unzip
+    state: latest
+  tags: [ system ]

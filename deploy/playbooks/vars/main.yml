@@ -1,0 +1,17 @@
+---
+
+# Nginx settings
+nginx_vhosts: []
+nginx_remove_default_vhost: true
+nginx_ppa_use: true
+nginx_ppa_version: stable
+nginx_docroot: /var/www/http
+
+# Firewall
+firewall_state: started
+firewall_enabled_at_boot: true
+firewall_flush_rules_and_chains: true
+firewall_allowed_tcp_ports:
+  - "22"
+  - "80"
+  - "443"

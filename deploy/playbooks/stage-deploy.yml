@@ -1,0 +1,11 @@
+---
+
+- name: Deploy application code.
+  hosts: web
+  remote_user: root
+  vars_files:
+    - vars/main.yml
+  roles:
+#    - project
+#    - geerlingguy.firewall
+    - geerlingguy.certbot
