@@ -1,4 +1,9 @@
 # Development
+## Terms
+- Stateful
+- Stateless
+- Idempotence
+
 ## Read more
 - [www.w3schools.com/](https://www.w3schools.com)
 - [developer.mozilla.org/](https://developer.mozilla.org)

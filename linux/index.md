@@ -9,6 +9,7 @@ ssh-add ~/.ssh/eduard.trandafir@mrm-mccann.com
 ```
 
 ```bash
+pbcopy < ~/.ssh/id_rsa.pub
 ssh-copy-id id@server		
 ssh id@server		
 ssh -i private_key user@host	Specify a private key to match	
@@ -49,6 +50,8 @@ sudo apt-get install php7.1-mbstring
 ## MySQL
 ```bash
 systemctl status mysql.service
+sudo service mysql status
+sudo service mysql restart
 ```
 
 ## Nginx

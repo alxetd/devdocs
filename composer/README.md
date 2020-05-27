@@ -33,4 +33,5 @@ composer update --lock	any time you manually edit composer.json in this way with
 composer show package/name	
 composer require drupal/console:~1.0 --prefer-dist --optimize-autoloader	
 composer prohibits drupal/core:8.5.0
+php -d memory_limit=-1 composer.phar require hwi/oauth-bundle php-http/guzzle6-adapter php-http/httplug-bundle
 ```
