@@ -11,7 +11,7 @@
 - name: Clone code from repository
   git:
     repo: "{{ repository }}"
-    version: develop
+    version: master
     dest: "/var/www/{{ project_name }}"
     accept_hostkey: yes
     force: yes
