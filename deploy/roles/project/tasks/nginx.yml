@@ -13,13 +13,6 @@
     state: directory
   tags: [ nginx ]
 
-- name: Sets php_fastcgi.conf file
-  template:
-    src: "templates/nginx/php_fastcgi.conf.j2"
-    dest: "/etc/nginx/nginxconfig.io/php_fastcgi.conf"
-    mode: 0644
-  tags: [ nginx ]
-
 - name: Sets general.conf file
   template:
     src: "templates/nginx/general.conf.j2"
