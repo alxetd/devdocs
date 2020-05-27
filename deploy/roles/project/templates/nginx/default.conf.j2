@@ -12,7 +12,7 @@ server {
 }
 
 server {
-    listen 443 ssl default_server;
+    listen 443 ssl;
 
     server_name {{ domain }};
     root /var/www/{{ project_name }}/web/.vuepress/dist;
