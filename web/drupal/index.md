@@ -25,6 +25,8 @@ drush cache-rebuild
 composer require drupal/search_api_solr
 ```
 
+# Admin themes
+[Adminimal - Responsive Administration Theme](https://www.drupal.org/project/adminimal_theme)
 ## Deploy
 ```bash
 cd /var/www/notes/release/web
