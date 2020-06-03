@@ -1,34 +1,6 @@
 # Git
 
 ## Commands
-### git config
-```bash
-git config --global color.ui auto	
-git config --global user.email "alxetd@gmail.com"	
-git config --global user.name "Eduard Trandafir"	
-```
-
-### git reset
-```bash
-git reset --hard HEAD	
-git reset --hard HEAD~1	# erases your last commit
-git reset --soft HEAD~1	# This will undo the most recent commit.
-git reset --soft HEAD~2	# reset back more than one commit by changing the number after ~
-git reset HEAD^	# Since we dont specify "--hard", files stay in working directory
-git reset --hard origin/master
-```
-
-### git remote
-```bash
-git remote
-git remote show origin # If referential integrity is intact
-git remote set-url origin git@bitbucket.org:alxetd_dev/alxetd.git
-git remote set-url origin git@bitbucket.org:alxetd_dev/alxetd.git --push
-git remote rename origin drupal	 
-git remote add origin path/to/your/central/git/repo	
-git remote add upstream path/to/your/central/git/repo	
-git remote -v
-```
 
 ### git clone
 ```bash
