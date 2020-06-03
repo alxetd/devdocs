@@ -101,6 +101,12 @@ module.exports = {
                 'drupal-console',
                 'drush',
             ],
+            '/git/': [
+                '',
+                'config',
+                'remote',
+                'reset',
+            ],
             '/html/': [
                 ''
             ],
