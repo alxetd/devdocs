@@ -76,7 +76,7 @@ module.exports = {
                 ]
             },
             {text: 'Design Patterns', link: '/design-patterns/'},
-            {text: 'Interview', link: '/interview/'}
+            // {text: 'Interview', link: '/interview/'}
         ],
         sidebar: {
             '/angular/': [

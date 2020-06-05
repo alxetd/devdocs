@@ -5,11 +5,26 @@
 
 ## Resources
 ### SELECT
+```mysql
+select host, user from mysql.user;
+```
+```mysql
+SELECT CONCAT('SHOW GRANTS FOR ''',user,'''@''',host,''';') FROM mysql.user;
+SELECT CONCAT('SHOW GRANTS FOR ''',user,'''@''',host,''';') FROM mysql.user INTO outfile '/tmp/show_grants.txt';
+```
 ### UPDATE
 ### WHERE
 ### LIMIT
 ### JOIN
 ### UNION
+### DESCRIBE
+```mysql
+desc mysql.user;
+```
+### GRANTS
+```mysql
+SHOW GRANTS FOR 'root'@'localhost';
+```
 
 ## Useful commands
 
