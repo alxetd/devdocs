@@ -21,9 +21,11 @@ drush cache-rebuild
 ```
 
 ## Modules
+https://www.drupal.org/project/search_api_solr
 ```bash
 composer require drupal/search_api_solr
 ```
+https://www.drupal.org/project/field_group
 
 # Admin themes
 [Adminimal - Responsive Administration Theme](https://www.drupal.org/project/adminimal_theme)
