@@ -1,5 +1,34 @@
 # Setup
 
+## Configuration management
+Keep all configuration in sync with git.
+
+settings.php file should be updated
+```bash
+$settings['config_sync_directory'] = '../config/sync';
+```
+Drush based workflow
+```bash
+drush cex
+drush cim
+```
+Sources
+- https://www.drupal.org/docs/configuration-management/changing-the-storage-location-of-the-sync-directory
+
+## Setup local development
+```bash
+$databases['default']['default'] = array(
+  'driver' => 'mysql',
+  'database' => 'drupaldb',
+  'username' => 'username',
+  'password' => 'secret',
+  'host' => 'localhost',
+);
+```
+
+Sources:
+- https://www.drupal.org/docs/8/api/database-api/database-configuration
+
 ## Setup a new project using Barrio theme
 
 To set up a new project using Barrio theme based on bootstrap 4 and sass:

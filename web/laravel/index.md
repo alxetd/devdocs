@@ -6,10 +6,12 @@
 
 ## Commands
 ```bash
-php artisan make:model Car --all
+php artisan make:model Model -a
+php artisan make:model Model --all
+```
+```bash
 php artisan make:controller UserController
 ```
-
 ### Create Api
 ::: warning Answer
 ```bash
