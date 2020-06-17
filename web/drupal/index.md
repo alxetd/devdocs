@@ -26,6 +26,9 @@ https://www.drupal.org/project/search_api_solr
 composer require drupal/search_api_solr
 ```
 https://www.drupal.org/project/field_group
+https://www.drupal.org/project/config_split
+https://www.drupal.org/project/config_filter
+https://www.drupal.org/project/weight
 
 # Admin themes
 [Adminimal - Responsive Administration Theme](https://www.drupal.org/project/adminimal_theme)
