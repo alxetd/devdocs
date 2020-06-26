@@ -97,6 +97,7 @@ module.exports = {
             '/drupal/': [
                 '',
                 'acquia-dev-desktop',
+                'code',
                 'setup',
                 'drupal-console',
                 'drush',
