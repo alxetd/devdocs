@@ -26,6 +26,20 @@ https://www.drupal.org/project/search_api_solr
 composer require drupal/search_api_solr
 ```
 https://www.drupal.org/project/field_group
+https://www.drupal.org/project/config_split
+https://www.drupal.org/project/config_ignore
+https://www.drupal.org/project/config_filter
+https://www.drupal.org/project/config_rewrite
+https://www.drupal.org/project/config_readonly
+https://www.drupal.org/project/config_override
+https://www.drupal.org/project/weight
+https://www.drupal.org/project/views_infinite_scroll
+https://www.drupal.org/project/viewsreference
+https://www.drupal.org/project/draggableviews
+https://www.drupal.org/project/better_exposed_filters
+
+## Themes
+- https://www.drupal.org/project/olivero
 
 # Admin themes
 [Adminimal - Responsive Administration Theme](https://www.drupal.org/project/adminimal_theme)
