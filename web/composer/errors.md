@@ -7,27 +7,46 @@ Fatal error: Allowed memory size of 1610612736 bytes exhausted (tried to allocat
 
 Check https://getcomposer.org/doc/articles/troubleshooting.md#memory-limit-errors for more info on how to handle out of memory errors.%
 ```
-Solution
+
+#### Solution 1
+Download composer.phar
 ```bash
 php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
 php -r "if (hash_file('sha384', 'composer-setup.php') === 'e5325b19b381bfd88ce90a5ddb7823406b2a38cff6bb704b0acc289a09c8128d4a8ce2bbafcd1fcbdc38666422fe2806') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
 php composer-setup.php
 php -r "unlink('composer-setup.php');"
 ```
+Run command with local composer.phar
 ```bash
 php -d memory_limit=-1 composer.phar install
 ```
-Sources
+
+#### Solution 2: Update php.ini memory_limit
+```bash
+php --ini
+```
+
+```bash
+; Max memory per instance
+memory_limit = 4096M
+```
+
+```bash
+brew services restart php
+```
+
+#### Sources
 - [https://getcomposer.org/download/](https://getcomposer.org/download/)
+- [https://medium.com/@stefanledin/how-to-increase-the-php-7-2-memory-limit-on-mac-os-978ebb78c543](https://medium.com/@stefanledin/how-to-increase-the-php-7-2-memory-limit-on-mac-os-978ebb78c543)
 
 ## failed to open stream: Too many open files
 ```bash
  [ErrorException]
   fopen([...]/89d4011354757068ea69752f2ec2808f1d41b32d.tar): failed to open stream: Too many open files
 ```
-Solution
+#### Solution
 ```bash
 ulimit -n 10000
 ```
-Sources
+#### Sources
 - [https://stackoverflow.com/questions/14748499/fatal-error-too-many-open-files](https://stackoverflow.com/questions/14748499/fatal-error-too-many-open-files)
