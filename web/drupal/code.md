@@ -59,3 +59,10 @@ foreach ($mediaEntities as $nid) {
     $media->save();
 }
 ```
+
+```php
+foreach ([] as $nid) {
+    $media = Media::load($nid);
+    $media->delete();
+}
+```

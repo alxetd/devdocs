@@ -7,6 +7,25 @@
 git clone --branch <tag_name> <repo_url>
 git clone --depth DEPTH --single-branch --branch BRANCH REPO_URL
 ```
+### Delete local branches
+```bash
+git fetch --all -p; git branch -vv | grep ": gone]" | awk '{ print $1 }' | xargs -n 1 git branch -D
+```
+
+### Delete all branches but master and develop
+```bash
+git fetch --all -p | git branch -vv | awk '{ print $1 }' | xargs -n 1 | grep -Ev "master|develop" | tail -n +2 | xargs -n 1 git branch -D
+```
+
+### Working with tags
+```bash
+git tag
+git tag -a <version>
+git push origin <tag_name>
+git push --tags
+git fetch --tags
+git checkout -b <New Branch Name> <TAG Name>
+```
 
 ### general
 ```bash
@@ -25,10 +44,6 @@ git clean -f -x	remove ignored and non-ignored files
 git pull	
 git config --get remote.origin.url	If referential integrity has been broken
 git init --bare fooproject.git	creates a new directory called fooproject.git that contains all of the git objects.
-git tag	
-git tag -a <version>	
-git push origin <tag_name>	
-git push --tags	
 git fetch --prune	deleting the refs to the branches that dont exist on the remote
 git log --oneline	
 git rebase -i HEAD~3	Interactive mode. Commit to replay onto. Pops up an editor with the rebase script.

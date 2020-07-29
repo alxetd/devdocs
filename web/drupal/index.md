@@ -37,6 +37,7 @@ https://www.drupal.org/project/views_infinite_scroll
 https://www.drupal.org/project/viewsreference
 https://www.drupal.org/project/draggableviews
 https://www.drupal.org/project/better_exposed_filters
+https://www.drupal.org/project/pwa
 
 ## Themes
 - https://www.drupal.org/project/olivero

@@ -65,6 +65,7 @@ module.exports = {
                 ariaLabel: 'Backend',
                 items: [
                     {text: 'Apache', link: '/apache/'},
+                    {text: 'Composer', link: '/composer/'},
                     {text: 'Docker', link: '/docker/'},
                     {text: 'Drupal', link: '/drupal/'},
                     {text: 'Git', link: '/git/'},
@@ -84,6 +85,10 @@ module.exports = {
             ],
             '/apache/': [
                 ''
+            ],
+            '/composer/': [
+                '',
+                'errors'
             ],
             '/css/': [
                 ''
